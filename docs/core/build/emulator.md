@@ -53,7 +53,24 @@ If you're using Windows 10, you can utilize [Windows Sybsystem for Linux](https:
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-After restart of the system, visit 
+After restart of the system, visit [openSUSE Leap 15 page in Microsoft Store](https://www.microsoft.com/store/productId/9NJFZK00FGKV) and install the system by pressing **Get** button. openSUSE Leap 15 will download and installs. Once the installation is done, you can continue by installing required packages as follows:
+
+```
+sudo zypper install -y git-core python3-devel python3-pip scons libSDL2-devel libSDL2_image-devel xorg-x11
+sudo pip install pipenv
+```
+
+Then clone `trezor/trezor-firmware` repository, initialize `pipenv` and build the emulator.
+```
+git clone https://github.com/trezor/trezor-firmware.git
+cd trezor-firmware && pipenv sync
+pipenv shell
+cd core
+make build_unix
+```
+
+Once the emulator is built properly, you also need to install Xorg server on your Windows desktop, you can choose between [Xming](https://sourceforge.net/projects/xming/) and [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/).
+
 
 ## Build
 
