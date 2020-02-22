@@ -23,7 +23,7 @@ sudo yum install scons SDL2-devel SDL2_image-devel
 * __OpenSUSE__:
 
 ```sh
-sudo zypper install scons libSDL2-devel libSDL2_image-devel
+sudo zypper install python3-devel python3-pip scons libSDL2-devel libSDL2_image-devel
 ```
 
 * __Arch__:
@@ -47,6 +47,13 @@ brew install scons sdl2 sdl2_image pkg-config
 ```
 
 * __Windows__: not supported yet, sorry.
+If you're using Windows 10, you can utilize [Windows Sybsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), first [install WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10). By opening a PowerShell terminal with Administrator priviledges and running the command below; restart the system when prompted.
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+
+After restart of the system, visit 
 
 ## Build
 
